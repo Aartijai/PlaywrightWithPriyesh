@@ -1,0 +1,28 @@
+// ---------------- POSITIVE TEST ----------------
+test('login success', async ({ page }) => {
+
+  await page.goto('https://example.com/login');
+
+  await page.getByTestId('username').fill('testuser');
+  await page.getByTestId('password').fill('Test@123');
+
+  await page.getByRole('button', { name: 'Submit' }).click();
+
+  // robust validation
+  await expect(page.locator('#dashboard')).toBeVisible();
+  await expect(page).toHaveURL(/dashboard/);
+});
+------------Negative test case---------------
+import { test,expect } from @playwright/test';
+
+test('Negative test', async ({ page }) => {
+
+await page.getByTestId('Username').fill('testuser');
+await page.getByTestId('password').fill('wrong password');
+
+await page.getByRole('button', {name:'Submit'}).click());
+
+await expect(page.locator('#error-message')).not.toBeVisible();
+await expect(page.locator('#error-message')).toHaveText('Pawwrod is wrong');
+
+})
