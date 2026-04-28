@@ -12,12 +12,12 @@
   "devDependencies": {
     "@playwright/test": "^1.59.1",
     "@types/node": "^24.2.0",
+    "allure-playwright": "^3.7.1",
     "playwright": "^1.54.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "allure-playwright": "^3.7.1",
     "csv-parse": "^6.2.1",
     "test": "^3.3.0"
   }
